@@ -1,0 +1,10 @@
+*.vcd
+*.vvp
+*.log
+*.o
+*.out
+*.bin
+*.hex
+tmp/
+synthesis/
+__pycache__/

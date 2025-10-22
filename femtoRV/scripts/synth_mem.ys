@@ -1,0 +1,5 @@
+read_verilog -sv OpenLane/src/bram.v
+hierarchy -top bram
+proc; opt; memory; opt
+# Importante: genera DOT (no SVG) para ser compatible con Yosys 0.9
+show -format dot -prefix bram_view
