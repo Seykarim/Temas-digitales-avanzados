@@ -1,0 +1,3 @@
+[submodule "ITA-CORES"]
+	path = ITA-CORES
+	url = https://github.com/FelipeFFerreira/ITA-CORES
