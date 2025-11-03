@@ -1,14 +1,54 @@
-*.vcd
-*.vvp
-*.log
-*.o
-*.out
-*.bin
-*.hex
-*.pyc
+# Python
 __pycache__/
-tmp/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+.env.*
+
+# MATLAB / Simulink
+*.asv
+*.m~
+*.mex*
+slprj/
+*.autosave
+*.slxc
+*.mdl.r2016a
+*.slxc
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / IDEs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Builds / resultados / logs
 build/
+dist/
+*.out
+*.o
+*.aux
+*.toc
+*.log
+*.tmp
+logs/
+outputs/
 results/
-synthesis/
-runs/
+
+# Latex
+*.aux
+*.bbl
+*.blg
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+
+# Otros
+*.bak
