@@ -1,0 +1,12 @@
+read_verilog -sv \
+  OpenLane/src/femto.v \
+  OpenLane/src/femtorv32_quark.v \
+  OpenLane/src/bram.v \
+  OpenLane/src/perip_uart.v OpenLane/src/uart.v \
+  OpenLane/src/perip_mult.v OpenLane/src/mult.v \
+  OpenLane/src/MappedSPIFlash.v OpenLane/src/MappedSPIRAM.v
+
+hierarchy -top femto
+proc; opt; fsm; opt; memory; opt
+# Otra vez: DOT por compatibilidad con Yosys 0.9
+show -format dot -prefix femto_synth

@@ -1,0 +1,18 @@
+read_verilog -sv \
+  OpenLane/src/femto.v \
+  OpenLane/src/femtorv32_quark.v \
+  OpenLane/src/bram.v \
+  OpenLane/src/perip_uart.v OpenLane/src/uart.v \
+  OpenLane/src/perip_mult.v OpenLane/src/mult.v \
+  OpenLane/src/MappedSPIFlash.v OpenLane/src/MappedSPIRAM.v
+
+# top del SoC
+hierarchy -check -top femto
+
+# pases básicos que sí existen en 0.9
+proc; opt; fsm; opt; memory; opt
+
+# En Yosys 0.9 el 'show' no saca SVG. Sacamos DOT.
+# Nota: -prefix puede no existir en algunas builds 0.9.
+# Probamos con y sin prefix.
+show -format dot -prefix soc_view femto

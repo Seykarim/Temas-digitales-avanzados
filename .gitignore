@@ -1,55 +1,21 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.venv/
-venv/
-.env
-.env.*
-
-# MATLAB / Simulink
-*.asv
-*.m~
-*.mex*
-slprj/
-*.autosave
-*.slxc
-*.mdl.r2016a
-*.slxc
+# Archivos de simulación y temporales
+*.vcd
+*.vvp
 *.log
-
-# Jupyter
-.ipynb_checkpoints/
-
-# OS / IDEs
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-
-# Builds / resultados / logs
-build/
-dist/
 *.out
 *.o
-*.aux
-*.toc
-*.log
-*.tmp
-logs/
-outputs/
-results/
+*.elf
+*.bin
+*.hex
+*.lst
 
-# Latex
-*.aux
-*.bbl
-*.blg
-*.toc
-*.lof
-*.lot
-*.synctex.gz
+# Carpetas de build / runs
+build/
+runs/
+tmp/
+__pycache__/
 
-# Otros
-*.bak
-.gitattributes
+# Archivos de intercambio editor
+*~
+.vscode/
+.idea/
