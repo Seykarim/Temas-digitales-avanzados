@@ -2,7 +2,7 @@
 # Proyecto Temas Digitales Avanzados – Arquitectura RISC-V y SoC  
 **Fecha:** 06/12/2025  
 **Autor:** Seykarim  
-
+**Docente:** Carlos Ivan Camargo Bareño
 ---
 
 # 1. Introducción
