@@ -1,0 +1,38 @@
+# ============================
+#  Simulaciones multiplicador
+# ============================
+
+IVERILOG = iverilog
+VVP      = vvp
+
+# --- Simulación del núcleo mult32_iter solo ---
+sim_mult_core: build_perip_mult/tb_perip_mult32.vvp
+	$(VVP) build_perip_mult/tb_perip_mult32.vvp
+
+build_perip_mult/tb_perip_mult32.vvp:
+	mkdir -p build_perip_mult
+	$(IVERILOG) -g2012 -Wall -o build_perip_mult/tb_perip_mult32.vvp \
+	  cores/mult_custom/tb_perip_mult32.v \
+	  cores/mult_custom/mult32_iter.v
+
+# --- Simulación del periférico por bus (perip_mult32) ---
+sim_mult_bus: build_perip_mult_bus/tb_perip_mult32_bus.vvp
+	$(VVP) build_perip_mult_bus/tb_perip_mult32_bus.vvp
+
+build_perip_mult_bus/tb_perip_mult32_bus.vvp:
+	mkdir -p build_perip_mult_bus
+	$(IVERILOG) -g2012 -Wall -o build_perip_mult_bus/tb_perip_mult32_bus.vvp \
+	  cores/mult_custom/tb_perip_mult32_bus.v \
+	  cores/mult_custom/perip_mult32.v \
+	  cores/mult_custom/mult32_iter.v
+
+# --- Abrir ondas cómodamente ---
+view_mult_core:
+	gtkwave perip_mult32_tb.vcd &
+
+view_mult_bus:
+	gtkwave perip_mult32_bus.vcd &
+
+clean_mult:
+	rm -rf build_perip_mult build_perip_mult_bus \
+	   perip_mult32_tb.vcd perip_mult32_bus.vcd

@@ -122,17 +122,25 @@ module femto (
      .ledout(LEDS)
    ); 
 
-/*
-	peripheral_mult mult1 (
-		.clk(clk), 
-		.reset(!resetn), 
-		.d_in(mem_wdata[15:0]), 
-		.cs(cs[3]), 
-		.addr(mem_address[4:0]), 
-		.rd(rd), 
-		.wr(wr), 
-		.d_out(mult_dout) 
-	);
+
+	   // ------------------------------------------------------------------
+   //  Multiplicador 32 bits mapeado a memoria (cs[3], región 0x40000000)
+   // ------------------------------------------------------------------
+   perip_mult32 #(
+      .ADDR_WIDTH(4),    // 16 registros: 0..15
+      .DATA_WIDTH(32)
+   ) mult_perip (
+      .clk   (clk),
+      .rst   (!resetn),                     // reset activo en alto
+      .we    (cs[3] & wr),                  // escritura cuando cs[3] y write
+      .re    (cs[3] & rd),                  // lectura cuando cs[3] y read
+      .addr  (mem_address[5:2]),           // dirección de palabra (alineada a 32 bits)
+      .wdata (mem_wdata),                  // dato de 32 bits desde el bus
+      .rdata (mult_dout),                  // resultado hacia el bus
+      .busy  (),                           // no los usamos por ahora
+      .done  ()
+   );
+
 
 
    peripheral_dpram dpram_p0( 
@@ -145,7 +153,7 @@ module femto (
       .wr(wr),
       .d_out(dpram_dout)
   );
-*/
+
 
   // ============== Chip_Select (Addres decoder) ======================== 
   // se hace con los 8 bits mas significativos de mem_addr

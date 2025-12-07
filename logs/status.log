@@ -1,0 +1,54 @@
+==> Información del sistema
+Linux seykarim-JI5O14LA 5.15.0-161-generic #171-Ubuntu SMP Sat Oct 11 08:17:01 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+
+==> Git: rama, remoto, estado
+main
+origin	https://github.com/Seykarim/Temas-digitales-avanzados.git (fetch)
+origin	https://github.com/Seykarim/Temas-digitales-avanzados.git (push)
+En la rama main
+nada para hacer commit, el árbol de trabajo está limpio
+
+==> Últimos 15 commits
+b2a71f9 chore: reporte de avance y scripts de ejecución
+0686377 Add submodules: VLSI and ITA-CORES
+a7cde40 Primera subida desde el equipo local
+bd9bcf5 Versión inicial del proyecto FemtoRV y simulación
+1fbb805 Versión inicial del proyecto FemtoRV y simulación
+
+==> Conteo de archivos por extensión
+ 109453 c
+  26308 h
+   8102 v
+   2391 sh
+   1086 m
+    971 json
+    898 md
+    759 py
+    649 hpp
+    232 tcl
+    151 mk
+    143 cpp
+    102 sv
+    100 tex
+     30 yml
+     21 make
+      9 sdc
+      8 bash
+      5 ts
+      4 js
+      3 yaml
+      1 bib
+
+==> Archivos relevantes detectados
+- Python:
+femtoRV/vcd_to_sp.py
+- MATLAB/Simulink:
+- C/C++ y Make:
+femtoRV/Makefile
+- LaTeX / Docs:
+ITA-CORES/README.md
+VLSI/README.md
+- Otros (Docker/CI):
+
+==> Puntos de entrada potenciales
+<none>

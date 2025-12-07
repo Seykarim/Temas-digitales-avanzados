@@ -1,21 +1,9 @@
-# Archivos de simulación y temporales
-*.vcd
-*.vvp
-*.log
-*.out
-*.o
-*.elf
-*.bin
-*.hex
-*.lst
-
-# Carpetas de build / runs
+VLSI/
+yosys/
+reference/
 build/
-runs/
-tmp/
-__pycache__/
-
-# Archivos de intercambio editor
-*~
-.vscode/
-.idea/
+sim/
+*.vcd
+*.json
+*.bin
+*.out

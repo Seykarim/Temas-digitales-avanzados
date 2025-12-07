@@ -1,6 +1,6 @@
 module peripheral_uart#(
 	parameter          clk_freq = 25000000,
-	parameter          baud     = 57000
+	parameter          baud     = 115200
 )(
     input clk,
     input rst,

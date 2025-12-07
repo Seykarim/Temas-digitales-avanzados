@@ -1,0 +1,40 @@
+# Makefile.rtl – simulación RTL del SoC femto + testbench femto_TB.v
+
+IVERILOG = iverilog
+VVP      = vvp
+GTKWAVE  = gtkwave
+
+RTL_SRCS = \
+  femto_TB.v \
+  OpenLane/src/femto.v \
+  OpenLane/src/femtorv32_quark.v \
+  OpenLane/src/perip_uart.v \
+  OpenLane/src/uart.v \
+  OpenLane/src/perip_mult.v \
+  OpenLane/src/mult.v \
+  OpenLane/src/bram.v \
+  OpenLane/src/MappedSPIFlash.v \
+  OpenLane/src/MappedSPIRAM.v \
+  cores/sim_spi_flash/spiflash.v \
+  cores/sim_spi_ram/spiram.v
+
+DEFS = -DBENCH -DSIM -DPASSTHROUGH_PLL -DBOARD_FREQ=27 -DCPU_FREQ=27
+
+all: sim wave
+
+sim: femto_tb
+	$(VVP) femto_tb
+
+femto_tb: $(RTL_SRCS)
+	$(IVERILOG) -g2012 -Wall $(DEFS) -o femto_tb $(RTL_SRCS)
+
+wave: sim
+	@if [ -f femto_TB.vcd ]; then \
+	  echo "Abriendo femto_TB.vcd en GTKWave..."; \
+	  $(GTKWAVE) femto_TB.vcd & \
+	else \
+	  echo "No se encontró femto_TB.vcd (¿falló la simulación?)"; \
+	fi
+
+clean:
+	rm -f femto_tb *.vcd

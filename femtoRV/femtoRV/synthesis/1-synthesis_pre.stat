@@ -1,0 +1,31 @@
+
+54. Printing statistics.
+
+=== femto ===
+
+   Number of wires:               2035
+   Number of wire bits:           2514
+   Number of public wires:          63
+   Number of public wire bits:     542
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2349
+     $_ANDNOT_                     157
+     $_AND_                        379
+     $_AOI3_                       235
+     $_AOI4_                        96
+     $_DFF_N_                      177
+     $_DFF_P_                      199
+     $_DLATCH_P_                     1
+     $_MUX_                        183
+     $_NAND_                       219
+     $_NOR_                        107
+     $_NOT_                         46
+     $_OAI3_                       182
+     $_OAI4_                        19
+     $_ORNOT_                      123
+     $_OR_                          67
+     $_XNOR_                       109
+     $_XOR_                         50
+
